@@ -17,6 +17,9 @@ app.use(bodyParser.json())
 
 var animalCtrl = require('./controllers/animalCtrl')
 
+app.get('/api/animals', animalCtrl.getAllAnimals)
+app.post('/api/animal', animalCtrl.createAnimal)
+
 var port = 9001
 app.listen(port, function(){
   console.log("it's over 9000!");
